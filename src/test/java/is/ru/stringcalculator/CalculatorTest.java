@@ -44,4 +44,8 @@ public class CalculatorTest {
     public void testNegativeException(){
     	assertEquals(5, Calculator.add("-1,2,3"));
 	}
+	@Test
+    public void testMoreThan1K(){
+    	assertEquals(2, Calculator.add("1001,2"));
+	}
 }	

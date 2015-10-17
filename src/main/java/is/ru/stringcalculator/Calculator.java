@@ -41,6 +41,9 @@ public class Calculator {
         	if (num < 0){
         		System.out.print("Negatives not allowed: ");
         	}
+        	else if(num > 1000){
+        		
+        	}
         	else{
 		    	total += toInt(number);
 		    }
