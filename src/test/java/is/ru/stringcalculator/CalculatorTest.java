@@ -48,4 +48,8 @@ public class CalculatorTest {
     public void testMoreThan1K(){
     	assertEquals(2, Calculator.add("1001,2"));
 	}
+	@Test
+    public void testLongDelimiter(){
+    	assertEquals(6, Calculator.add("//,,,\n1,,,2,,,3"));
+    }	
 }	

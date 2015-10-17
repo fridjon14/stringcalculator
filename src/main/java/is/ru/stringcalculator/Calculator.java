@@ -12,7 +12,7 @@ public class Calculator {
 		String delimiter = ",";
 
 		if(text.startsWith("//")){
-			delimiter = text.substring(2,3);
+			delimiter = text.substring(2,text.indexOf("\n"));
 			text = text.substring(text.indexOf("\n")+1);
 		}
 
@@ -42,7 +42,7 @@ public class Calculator {
         		System.out.print("Negatives not allowed: ");
         	}
         	else if(num > 1000){
-        		
+
         	}
         	else{
 		    	total += toInt(number);
