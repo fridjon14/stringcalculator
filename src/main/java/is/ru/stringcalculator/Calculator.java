@@ -37,7 +37,13 @@ public class Calculator {
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
-		    total += toInt(number);
+        	int num = toInt(number);
+        	if (num < 0){
+        		System.out.print("Negatives not allowed: ");
+        	}
+        	else{
+		    	total += toInt(number);
+		    }
 		}
 		return total;
     }

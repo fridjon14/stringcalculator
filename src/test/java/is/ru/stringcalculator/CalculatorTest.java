@@ -33,9 +33,15 @@ public class CalculatorTest {
     	assertEquals(3, Calculator.add("1\n2"));
     }
 	@Test
-    public void testCustiomDelimiter(){
+    public void testCustomDelimiter(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
-
-
-}
+	@Test
+    public void testCustomDelimiter2(){
+    	assertEquals(6, Calculator.add("//°\n1°2°3"));
+    }
+    @Test
+    public void testNegativeException(){
+    	assertEquals(5, Calculator.add("-1,2,3"));
+	}
+}	
