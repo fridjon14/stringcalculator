@@ -32,6 +32,10 @@ public class CalculatorTest {
     public void testNewLine(){
     	assertEquals(3, Calculator.add("1\n2"));
     }
+	@Test
+    public void testCustiomDelimiter(){
+    	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
 
 
 }
