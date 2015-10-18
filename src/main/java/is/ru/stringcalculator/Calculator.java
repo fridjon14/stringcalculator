@@ -10,8 +10,16 @@ public class Calculator {
 	public static int add(String text){
 
 		String delimiter = ",";
-
-		if(text.startsWith("//")){
+		if(text.startsWith("//[")){
+			text = text.replaceFirst("\\[","/(");
+			text = text.replaceAll("\\]\\[",")|(");
+			text = text.replaceAll("\\]", ")/");
+			delimiter = text.substring(2,text.indexOf("\n"));
+			text = text.substring(text.indexOf("\n")+1);
+			System.out.print(delimiter+"\n");
+			System.out.print(text);
+		}
+		else if(text.startsWith("//")){
 			delimiter = text.substring(2,text.indexOf("\n"));
 			text = text.substring(text.indexOf("\n")+1);
 		}
@@ -31,7 +39,7 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers, String delimiter){
-	    return numbers.split(delimiter + "|\n");
+	    return numbers.split("\\Q" + delimiter + "\\E" + "|\n");
 	}
       
     private static int sum(String[] numbers){
@@ -39,7 +47,7 @@ public class Calculator {
         for(String number : numbers){
         	int num = toInt(number);
         	if (num < 0){
-        		System.out.print("Negatives not allowed: ");
+        		System.out.print("Negatives not allowed: " + number);
         	}
         	else if(num > 1000){
 

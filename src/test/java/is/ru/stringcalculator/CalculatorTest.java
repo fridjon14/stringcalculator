@@ -39,6 +39,7 @@ public class CalculatorTest {
 	@Test
     public void testCustomDelimiter2(){
     	assertEquals(6, Calculator.add("//°\n1°2°3"));
+    	assertEquals(6, Calculator.add("//*\n1*2*3"));
     }
     @Test
     public void testNegativeException(){
@@ -51,5 +52,14 @@ public class CalculatorTest {
 	@Test
     public void testLongDelimiter(){
     	assertEquals(6, Calculator.add("//,,,\n1,,,2,,,3"));
+    }
+	@Test
+    public void testMultipleDelimiters(){
+    	assertEquals(6, Calculator.add("//[,][!]\n1,2,3"));
     }	
+/*	@Test
+    public void testMultipleLongDelimiters(){
+    	assertEquals(6, Calculator.add("//[,,,][!!!]\n1,,,2!!!3"));
+    }	
+*/
 }	
